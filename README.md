@@ -17,11 +17,9 @@
 </p>
 
 <p align="center">
-    <img src="https://github.com/dimkagithub/TheRickAndMortyApp/raw/main/Screenshots/characters.png" style="width:50%;"><img src="h
-      ttps://github.com/dimkagithub/TheRickAndMortyApp/raw/main/Screenshots/characters_info.png" style="width:50%;">
+    <img src="https://github.com/dimkagithub/TheRickAndMortyApp/raw/main/Screenshots/characters.png" style="width:50%;"><img src="https://github.com/dimkagithub/TheRickAndMortyApp/raw/main/Screenshots/characters_info.png" style="width:50%;">
   <br>
-  <img src="https://github.com/dimkagithub/TheRickAndMortyApp/raw/main/Screenshots/locations.png" style="width:50%;"><img src="h
-      ttps://github.com/dimkagithub/TheRickAndMortyApp/raw/main/Screenshots/episodes.png" style="width:50%;">
+  <img src="https://github.com/dimkagithub/TheRickAndMortyApp/raw/main/Screenshots/locations.png" style="width:50%;"><img src="https://github.com/dimkagithub/TheRickAndMortyApp/raw/main/Screenshots/episodes.png" style="width:50%;">
 </p>
 
 </body>
