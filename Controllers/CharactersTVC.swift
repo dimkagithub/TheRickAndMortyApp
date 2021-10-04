@@ -11,6 +11,15 @@ import SystemConfiguration
 class CharactersTVC: UITableViewController {
     
     var episode: Episode?
+    var filteredCharacters = [CharactersResults]()
+    var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    var filtering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
+    let searchController = UISearchController(searchResultsController: nil)
     
     func isInternetAvailable() -> Bool {
         var zeroAddress = sockaddr_in()
@@ -42,7 +51,6 @@ class CharactersTVC: UITableViewController {
         let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
-        
     }
     
     func showServerErrorAlert() {
@@ -50,11 +58,16 @@ class CharactersTVC: UITableViewController {
         let action = UIAlertAction(title: "Ок", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Поиск..."
+        searchController.searchBar.setValue("Отмена", forKey: "cancelButtonText")
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
         getCharacters {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -101,26 +114,36 @@ class CharactersTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allCharacters?.charactersResults.count ?? 0
+        if filtering {
+            return filteredCharacters.count
+        } else {
+            return allCharacters?.charactersResults.count ?? 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "charactersViewCell", for: indexPath) as! CharactersTVCell
-        cell.characterImage.downloadImageFrom(link: (allCharacters?.charactersResults[indexPath.row].image)!)
-        cell.characterName.text = allCharacters?.charactersResults[indexPath.row].name
-        if allCharacters?.charactersResults[indexPath.row].status.rawValue == "Alive" {
+        var characters: [CharactersResults]
+        if filtering {
+            characters = filteredCharacters
+        } else {
+            characters = allCharacters!.charactersResults
+        }
+        cell.characterImage.downloadImageFrom(link: (characters[indexPath.row].image))
+        cell.characterName.text = characters[indexPath.row].name
+        if characters[indexPath.row].status.rawValue == "Alive" {
             cell.characterStatusImage.backgroundColor = .green
-        } else if allCharacters?.charactersResults[indexPath.row].status.rawValue == "Dead" {
+        } else if characters[indexPath.row].status.rawValue == "Dead" {
             cell.characterStatusImage.backgroundColor = .red
         } else {
             cell.characterStatusImage.backgroundColor = .lightGray
         }
-        cell.characterStatusText.text = ("\(allCharacters?.charactersResults[indexPath.row].status.rawValue ?? "") - \(allCharacters?.charactersResults[indexPath.row].species.rawValue ?? "") -  \(allCharacters?.charactersResults[indexPath.row].gender.rawValue ?? "")")
-        cell.characterLocation.text = allCharacters?.charactersResults[indexPath.row].location.name
-        let urlString = allCharacters?.charactersResults[indexPath.row].episode[0]
+        cell.characterStatusText.text = ("\(characters[indexPath.row].status.rawValue) - \(characters[indexPath.row].species.rawValue) -  \(characters[indexPath.row].gender.rawValue)")
+        cell.characterLocation.text = characters[indexPath.row].location.name
+        let urlString = characters[indexPath.row].episode[0]
         let configuration = URLSessionConfiguration.ephemeral
         let session = URLSession(configuration: configuration)
-        let url = URL(string: urlString!)
+        let url = URL(string: urlString)
         let task = session.dataTask(with: url!) { (data, response, error) in
             guard let data = data else { return }
             guard error == nil else { return }
@@ -141,21 +164,40 @@ class CharactersTVC: UITableViewController {
         if segue.identifier == "showAllCharacterInfo" {
             let controller = segue.destination as! FirstViewController
             if let index = tableView.indexPathForSelectedRow {
-                let character = allCharacters?.charactersResults[index.row]
-                controller.fvcImage = character!.image
-                controller.characterInfo.append(contentsOf: [String(character!.name)])
-                controller.characterInfo.append(contentsOf: [String(character!.status.rawValue)])
-                controller.characterInfo.append(contentsOf:[String(character!.species.rawValue)])
-                if character?.type == "" {
+                var characters: [CharactersResults]
+                if filtering {
+                    characters = filteredCharacters
+                } else {
+                    characters = allCharacters!.charactersResults
+                }
+                controller.fvcImage = characters[index.row].image
+                controller.characterInfo.append(contentsOf: [String(characters[index.row].name)])
+                controller.characterInfo.append(contentsOf: [String(characters[index.row].status.rawValue)])
+                controller.characterInfo.append(contentsOf:[String(characters[index.row].species.rawValue)])
+                if characters[index.row].type == "" {
                     controller.characterInfo.append(contentsOf:[String("—")])
                 } else {
-                    controller.characterInfo.append(contentsOf: [String(character!.type)])
+                    controller.characterInfo.append(contentsOf: [String(characters[index.row].type)])
                 }
-                controller.characterInfo.append(contentsOf:[String(character!.gender.rawValue)])
-                controller.characterInfo.append(contentsOf:[String(character!.origin.name)])
-                controller.characterInfo.append(contentsOf:[String(character!.location.name)])
-                controller.characterInfo.append(contentsOf:[String(character!.episode.count)])
+                controller.characterInfo.append(contentsOf:[String(characters[index.row].gender.rawValue)])
+                controller.characterInfo.append(contentsOf:[String(characters[index.row].origin.name)])
+                controller.characterInfo.append(contentsOf:[String(characters[index.row].location.name)])
+                controller.characterInfo.append(contentsOf:[String(characters[index.row].episode.count)])
             }
         }
+    }
+}
+
+extension CharactersTVC: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        filteredCharacters = (allCharacters?.charactersResults.filter ({ (allCharacters: CharactersResults) -> Bool in
+            return allCharacters.name.lowercased().contains(searchText.lowercased())
+        }))!
+        tableView.reloadData()
     }
 }

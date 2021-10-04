@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--CharactersTVC-->
+        <!--Characters-->
         <scene sceneID="1Z6-oG-tpr">
             <objects>
                 <tableViewController id="4uo-IN-OBX" customClass="CharactersTVC" customModule="TheRickAndMortyApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,7 +96,7 @@
                                     <outlet property="characterStatusImage" destination="PGv-Bi-ycK" id="ON8-KC-ndi"/>
                                     <outlet property="characterStatusText" destination="P5X-x0-uHA" id="zED-6S-M9P"/>
                                     <outlet property="characterView" destination="QZK-Cf-ImW" id="Gtb-ea-3zi"/>
-                                    <segue destination="lgm-Jr-2Aj" kind="show" identifier="showAllCharacterInfo" id="Aj0-YM-CD5"/>
+                                    <segue destination="lgm-Jr-2Aj" kind="presentation" identifier="showAllCharacterInfo" id="Aj0-YM-CD5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -105,11 +105,11 @@
                             <outlet property="delegate" destination="4uo-IN-OBX" id="TlC-uA-odR"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="person.3" catalog="system" id="qxA-vL-4e5"/>
+                    <navigationItem key="navigationItem" title="Characters" id="eDo-wi-ptG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgO-fQ-Xe5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968" y="-975"/>
+            <point key="canvasLocation" x="1896.9230769230769" y="-975.35545023696682"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="cBA-xA-M7P">
@@ -193,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qoa-1a-xi8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="-975"/>
+            <point key="canvasLocation" x="2749.2307692307691" y="-975.35545023696682"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fuR-Rj-2EG">
@@ -205,16 +205,16 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4uo-IN-OBX" kind="relationship" relationship="viewControllers" id="mMb-4i-1S5"/>
-                        <segue destination="5HB-N9-RGf" kind="relationship" relationship="viewControllers" id="uz7-S5-YKY"/>
-                        <segue destination="cBy-MC-hyn" kind="relationship" relationship="viewControllers" id="bFz-JS-nhJ"/>
+                        <segue destination="ukg-fe-Ais" kind="relationship" relationship="viewControllers" id="mMb-4i-1S5"/>
+                        <segue destination="178-Fm-kpN" kind="relationship" relationship="viewControllers" id="uz7-S5-YKY"/>
+                        <segue destination="ktF-BK-KoE" kind="relationship" relationship="viewControllers" id="bFz-JS-nhJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BBW-j7-481" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="150.76923076923077" y="-285.07109004739334"/>
         </scene>
-        <!--LocationsTVC-->
+        <!--Locations-->
         <scene sceneID="93O-wr-73A">
             <objects>
                 <tableViewController id="5HB-N9-RGf" customClass="LocationsTVC" customModule="TheRickAndMortyApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -315,13 +315,13 @@
                             <outlet property="delegate" destination="5HB-N9-RGf" id="LM9-jI-ogQ"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="location" catalog="system" id="Uq5-ay-5xB"/>
+                    <navigationItem key="navigationItem" title="Locations" id="Ug7-8f-6OI"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOk-No-NQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="967.69230769230762" y="-285.07109004739334"/>
+            <point key="canvasLocation" x="1896.9230769230769" y="-285.07109004739334"/>
         </scene>
-        <!--EpisodesTVC-->
+        <!--Episodes-->
         <scene sceneID="zrT-xG-5xh">
             <objects>
                 <tableViewController id="cBy-MC-hyn" customClass="EpisodesTVC" customModule="TheRickAndMortyApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -422,11 +422,171 @@
                             <outlet property="delegate" destination="cBy-MC-hyn" id="IRZ-6K-ubX"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="tv" catalog="system" id="CeR-Ni-2Hv"/>
+                    <navigationItem key="navigationItem" title="Episodes" id="gjA-hk-lZq"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FqA-QT-fb0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968" y="410"/>
+            <point key="canvasLocation" x="1896.9230769230769" y="409.478672985782"/>
+        </scene>
+        <!--CharactersTVC-->
+        <scene sceneID="2oi-SH-kk4">
+            <objects>
+                <tableViewController id="3f4-3N-56E" customClass="CharactersTVC" customModule="TheRickAndMortyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ULc-pT-VKm">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.13849580289999999" green="0.15629374979999999" blue="0.18484163279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="charactersViewCell" id="sZt-9b-FU5" customClass="CharactersTVCell" customModule="TheRickAndMortyApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="390" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sZt-9b-FU5" id="rnD-DE-Exy">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8p-hP-geh">
+                                            <rect key="frame" x="20" y="11" width="350" height="128"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wVy-3M-t9y" userLabel="characterImage">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r0a-Qk-4hC" userLabel="characterStatusImage">
+                                                    <rect key="frame" x="136" y="32" width="8" height="8"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First seen in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIG-Rd-SKS">
+                                                    <rect key="frame" x="136" y="91" width="206" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                    <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last known location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CV9-av-egl">
+                                                    <rect key="frame" x="136" y="51" width="206" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                    <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YU3-um-rRO" userLabel="characterStatusText">
+                                                    <rect key="frame" x="152" y="30" width="190" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eNe-8I-WBz">
+                                                    <rect key="frame" x="136" y="8" width="206" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OW3-Fx-WSF">
+                                                    <rect key="frame" x="136" y="66" width="206" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMt-Fc-ZuL">
+                                                    <rect key="frame" x="136" y="105" width="206" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.23385533689999999" green="0.24267604949999999" blue="0.26708358529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="W8p-hP-geh" firstAttribute="top" secondItem="rnD-DE-Exy" secondAttribute="topMargin" id="6PB-Zn-10g"/>
+                                        <constraint firstItem="W8p-hP-geh" firstAttribute="leading" secondItem="rnD-DE-Exy" secondAttribute="leadingMargin" id="XJk-mQ-VQo"/>
+                                        <constraint firstItem="W8p-hP-geh" firstAttribute="trailing" secondItem="rnD-DE-Exy" secondAttribute="trailingMargin" id="ZdO-hO-yKE"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="W8p-hP-geh" secondAttribute="bottom" id="xH9-IK-aZv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.13849580289999999" green="0.15629374979999999" blue="0.18484163279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="characterEpisode" destination="qMt-Fc-ZuL" id="uBv-as-PAf"/>
+                                    <outlet property="characterImage" destination="wVy-3M-t9y" id="SxI-Nk-KMh"/>
+                                    <outlet property="characterLocation" destination="OW3-Fx-WSF" id="QFv-vl-D3Y"/>
+                                    <outlet property="characterName" destination="eNe-8I-WBz" id="mnN-o3-O5c"/>
+                                    <outlet property="characterStatusImage" destination="r0a-Qk-4hC" id="7dr-wp-G0U"/>
+                                    <outlet property="characterStatusText" destination="YU3-um-rRO" id="Shs-mc-hxP"/>
+                                    <outlet property="characterView" destination="W8p-hP-geh" id="cN5-BS-13J"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3f4-3N-56E" id="HoS-Im-MFc"/>
+                            <outlet property="delegate" destination="3f4-3N-56E" id="3Kp-Mw-zyw"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="" image="person.3" catalog="system" id="gKm-Uh-jVe"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y3x-2l-DWg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1896.9230769230769" y="-975.35545023696682"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IAY-Ei-x5d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ukg-fe-Ais" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="person.3" catalog="system" id="qxA-vL-4e5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eaS-9r-8h9">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4uo-IN-OBX" kind="relationship" relationship="rootViewController" id="KQJ-gF-b1l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C2n-i4-Avu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967.69230769230762" y="-975.35545023696682"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g5u-mC-ayU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="178-Fm-kpN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="location" catalog="system" id="Uq5-ay-5xB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I3z-jY-L1J">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5HB-N9-RGf" kind="relationship" relationship="rootViewController" id="dzL-yc-AvY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zO6-io-UcX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967.69230769230762" y="-285.07109004739334"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i90-7d-QU3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ktF-BK-KoE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="tv" catalog="system" id="CeR-Ni-2Hv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="USP-wm-eOU">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cBy-MC-hyn" kind="relationship" relationship="rootViewController" id="WfV-fv-rfH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZR-ie-QPR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967.69230769230762" y="409.478672985782"/>
         </scene>
     </scenes>
     <resources>
