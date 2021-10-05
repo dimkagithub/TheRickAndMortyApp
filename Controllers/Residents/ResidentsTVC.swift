@@ -51,25 +51,26 @@ class ResidentsTVC: UITableViewController {
                     }
                     cell.residentStatusText.text = ("\(self.residents!.residentsStatus) - \(self.residents!.residentsSpecies) - \(self.residents!.residentsGender)")
                     cell.residentLocation.text = self.residents?.residentsLocation.name
-                    cell.residentEpisode.text = self.residents?.residentsEpisode.description
                     self.residentEpisode.append((self.residents?.residentsEpisode[0])!)
-                    let urlString = self.residentEpisode[0]
-                    let configuration = URLSessionConfiguration.ephemeral
-                    let session = URLSession(configuration: configuration)
-                    let url = URL(string: urlString)
-                    let task = session.dataTask(with: url!) { (data, response, error) in
-                        guard let data = data else { return }
-                        guard error == nil else { return }
-                        do {
-                            self.residentEpisodes = try JSONDecoder().decode(Episode.self, from: data)
-                            DispatchQueue.main.async {
-                                cell.residentEpisode.text = self.residentEpisodes?.name
+                    for index in 0..<self.residentEpisode.count {
+                        let urlString = self.residentEpisode[index]
+                        let configuration = URLSessionConfiguration.ephemeral
+                        let session = URLSession(configuration: configuration)
+                        let url = URL(string: urlString)
+                        let task = session.dataTask(with: url!) { (data, response, error) in
+                            guard let data = data else { return }
+                            guard error == nil else { return }
+                            do {
+                                self.residentEpisodes = try JSONDecoder().decode(Episode.self, from: data)
+                                DispatchQueue.main.async {
+                                    cell.residentEpisode.text = self.residentEpisodes?.name
+                                }
+                            } catch let error {
+                                print(error)
                             }
-                        } catch let error {
-                            print(error)
                         }
+                        task.resume()
                     }
-                    task.resume()
                 }
             } catch let error {
                 print(error)

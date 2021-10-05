@@ -55,6 +55,17 @@ class EpisodesTVC: UITableViewController {
         cell.episodesNoCInfo.text = episodes[indexPath.row].characters.count.description
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showNoCharacters" {
+            let controller = segue.destination as! NumberOfCharactersTVC
+            if let index = tableView.indexPathForSelectedRow {
+                let characters: [EpisodesResults]
+                characters = allEpisodes!.episodesResults
+                controller.charactersInfo.append(contentsOf: characters[index.row].characters)
+            }
+        }
+    }
 }
 
 extension EpisodesTVC: UISearchResultsUpdating {
