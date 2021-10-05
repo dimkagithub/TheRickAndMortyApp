@@ -28,6 +28,9 @@
 		0A6E0215270A155B002E3FE9 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6E0214270A155B002E3FE9 /* Episode.swift */; };
 		0A6E0219270A452B002E3FE9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6E0218270A452B002E3FE9 /* Extensions.swift */; };
 		0A9FF337270ACDB000266E0B /* FVCViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FF336270ACDB000266E0B /* FVCViewCell.swift */; };
+		0AAE7D1B270CD43E00668977 /* NumberOfCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE7D1A270CD43E00668977 /* NumberOfCharacters.swift */; };
+		0AAE7D1F270CD45900668977 /* NumberOfCharactersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE7D1E270CD45900668977 /* NumberOfCharactersCell.swift */; };
+		0AAE7D23270CDE3B00668977 /* EpisodeCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE7D22270CDE3B00668977 /* EpisodeCharacters.swift */; };
 		0ACEADA5270B54910072C460 /* LocationsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACEADA4270B54910072C460 /* LocationsTVC.swift */; };
 		0ACEADAC270B54FD0072C460 /* LocationsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACEADAB270B54FD0072C460 /* LocationsTVCell.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,9 @@
 		0A6E0214270A155B002E3FE9 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		0A6E0218270A452B002E3FE9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0A9FF336270ACDB000266E0B /* FVCViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FVCViewCell.swift; sourceTree = "<group>"; };
+		0AAE7D1A270CD43E00668977 /* NumberOfCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfCharacters.swift; sourceTree = "<group>"; };
+		0AAE7D1E270CD45900668977 /* NumberOfCharactersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfCharactersCell.swift; sourceTree = "<group>"; };
+		0AAE7D22270CDE3B00668977 /* EpisodeCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCharacters.swift; sourceTree = "<group>"; };
 		0ACEADA4270B54910072C460 /* LocationsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTVC.swift; sourceTree = "<group>"; };
 		0ACEADAB270B54FD0072C460 /* LocationsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +127,7 @@
 				0A6E020D270A0DB7002E3FE9 /* Locations.swift */,
 				0A6E0211270A1032002E3FE9 /* Episodes.swift */,
 				0A51BCF2270C631C006D813A /* Residents.swift */,
+				0AAE7D22270CDE3B00668977 /* EpisodeCharacters.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,16 +135,12 @@
 		0A6E02052709DB15002E3FE9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0A6E02062709DB48002E3FE9 /* CharactersTVC.swift */,
-				0A6E020A2709DB71002E3FE9 /* CharactersTVCell.swift */,
-				0A408A8D270A4D72001C7001 /* FirstViewController.swift */,
-				0A9FF336270ACDB000266E0B /* FVCViewCell.swift */,
-				0ACEADA4270B54910072C460 /* LocationsTVC.swift */,
-				0ACEADAB270B54FD0072C460 /* LocationsTVCell.swift */,
-				0A4A6968270B806B005E6C8B /* EpisodesTVC.swift */,
-				0A4A696F270B80D7005E6C8B /* EpisodesTVCell.swift */,
-				0A51BCEC270C5419006D813A /* ResidentsTVC.swift */,
-				0A51BCEF270C542F006D813A /* ResidentsTVCell.swift */,
+				0AAE7D19270CD41700668977 /* Number of Characters */,
+				0AAE7D13270CD36D00668977 /* Characters */,
+				0AAE7D14270CD38500668977 /* FirstViewController */,
+				0AAE7D15270CD3A400668977 /* Locations */,
+				0AAE7D17270CD3C500668977 /* Episodes */,
+				0AAE7D18270CD3D700668977 /* Residents */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -148,6 +151,60 @@
 				0A6E0218270A452B002E3FE9 /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0AAE7D13270CD36D00668977 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				0A6E02062709DB48002E3FE9 /* CharactersTVC.swift */,
+				0A6E020A2709DB71002E3FE9 /* CharactersTVCell.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		0AAE7D14270CD38500668977 /* FirstViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0A408A8D270A4D72001C7001 /* FirstViewController.swift */,
+				0A9FF336270ACDB000266E0B /* FVCViewCell.swift */,
+			);
+			path = FirstViewController;
+			sourceTree = "<group>";
+		};
+		0AAE7D15270CD3A400668977 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				0ACEADA4270B54910072C460 /* LocationsTVC.swift */,
+				0ACEADAB270B54FD0072C460 /* LocationsTVCell.swift */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		0AAE7D17270CD3C500668977 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				0A4A6968270B806B005E6C8B /* EpisodesTVC.swift */,
+				0A4A696F270B80D7005E6C8B /* EpisodesTVCell.swift */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
+		0AAE7D18270CD3D700668977 /* Residents */ = {
+			isa = PBXGroup;
+			children = (
+				0A51BCEF270C542F006D813A /* ResidentsTVCell.swift */,
+				0A51BCEC270C5419006D813A /* ResidentsTVC.swift */,
+			);
+			path = Residents;
+			sourceTree = "<group>";
+		};
+		0AAE7D19270CD41700668977 /* Number of Characters */ = {
+			isa = PBXGroup;
+			children = (
+				0AAE7D1A270CD43E00668977 /* NumberOfCharacters.swift */,
+				0AAE7D1E270CD45900668977 /* NumberOfCharactersCell.swift */,
+			);
+			path = "Number of Characters";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +281,7 @@
 				0A6E020B2709DB71002E3FE9 /* CharactersTVCell.swift in Sources */,
 				0A6E02032709D94E002E3FE9 /* Characters.swift in Sources */,
 				0A6E02072709DB48002E3FE9 /* CharactersTVC.swift in Sources */,
+				0AAE7D1F270CD45900668977 /* NumberOfCharactersCell.swift in Sources */,
 				0A408A8E270A4D72001C7001 /* FirstViewController.swift in Sources */,
 				0A6E0215270A155B002E3FE9 /* Episode.swift in Sources */,
 				0A4A6969270B806B005E6C8B /* EpisodesTVC.swift in Sources */,
@@ -232,11 +290,13 @@
 				0A667E662709C75600E25E78 /* TheRickAndMortyApp.xcdatamodeld in Sources */,
 				0A667E5C2709C75600E25E78 /* AppDelegate.swift in Sources */,
 				0ACEADA5270B54910072C460 /* LocationsTVC.swift in Sources */,
+				0AAE7D1B270CD43E00668977 /* NumberOfCharacters.swift in Sources */,
 				0A6E01FF2709D8FC002E3FE9 /* Network.swift in Sources */,
 				0A9FF337270ACDB000266E0B /* FVCViewCell.swift in Sources */,
 				0A51BCF0270C542F006D813A /* ResidentsTVCell.swift in Sources */,
 				0A51BCF3270C631C006D813A /* Residents.swift in Sources */,
 				0A6E020E270A0DB7002E3FE9 /* Locations.swift in Sources */,
+				0AAE7D23270CDE3B00668977 /* EpisodeCharacters.swift in Sources */,
 				0A6E0219270A452B002E3FE9 /* Extensions.swift in Sources */,
 				0ACEADAC270B54FD0072C460 /* LocationsTVCell.swift in Sources */,
 				0A667E5E2709C75600E25E78 /* SceneDelegate.swift in Sources */,

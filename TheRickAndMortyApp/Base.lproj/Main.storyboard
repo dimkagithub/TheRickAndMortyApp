@@ -415,6 +415,7 @@
                                     <outlet property="episodesNameInfo" destination="3IJ-dC-NkY" id="ZhG-KM-ljv"/>
                                     <outlet property="episodesNoCInfo" destination="XVM-cl-FaR" id="atZ-WQ-J90"/>
                                     <outlet property="episodesView" destination="ifw-oJ-kvo" id="thp-Gn-g3G"/>
+                                    <segue destination="WW2-Gu-LEU" kind="presentation" identifier="showNoCharacters" id="Nan-tZ-RrD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -691,6 +692,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKt-3F-dJw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2747.6923076923076" y="-285.07109004739334"/>
+        </scene>
+        <!--Characters-->
+        <scene sceneID="TaH-Lc-uRw">
+            <objects>
+                <tableViewController id="WW2-Gu-LEU" customClass="NumberOfCharactersTVC" customModule="TheRickAndMortyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aSw-PY-MRi">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.13849580289999999" green="0.15629374979999999" blue="0.18484163279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="nOcharactersViewCell" id="smy-kX-BAW" userLabel="nOcharactersViewCell" customClass="NumberOfCharactersTVCell" customModule="TheRickAndMortyApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="390" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="smy-kX-BAW" id="M3w-lv-xxF">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67n-zd-KaX" userLabel="nOcharacters View">
+                                            <rect key="frame" x="20" y="11" width="350" height="128"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFr-de-xRI" userLabel="nOcharacterstImage">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fV6-IC-ksZ" userLabel="nOcharactersStatusImage">
+                                                    <rect key="frame" x="136" y="32" width="8" height="8"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First seen in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y7Q-hu-35z">
+                                                    <rect key="frame" x="136" y="91" width="206" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                    <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last known location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dg1-cg-ZfJ">
+                                                    <rect key="frame" x="136" y="51" width="206" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                    <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJL-Ac-SKF" userLabel="nOcharactersStatusText">
+                                                    <rect key="frame" x="152" y="30" width="190" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Gd-AS-uE2" userLabel="nOcharacters Name">
+                                                    <rect key="frame" x="136" y="8" width="206" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j2q-Sy-NlH" userLabel="nOcharacters Location">
+                                                    <rect key="frame" x="136" y="66" width="206" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWU-Lp-uLf" userLabel="nOcharacters Episode">
+                                                    <rect key="frame" x="136" y="105" width="206" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.23385533689999999" green="0.24267604949999999" blue="0.26708358529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="67n-zd-KaX" firstAttribute="trailing" secondItem="M3w-lv-xxF" secondAttribute="trailingMargin" id="NGs-MP-BpC"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="67n-zd-KaX" secondAttribute="bottom" id="TGn-SD-7ta"/>
+                                        <constraint firstItem="67n-zd-KaX" firstAttribute="leading" secondItem="M3w-lv-xxF" secondAttribute="leadingMargin" id="Wa6-4N-jyF"/>
+                                        <constraint firstItem="67n-zd-KaX" firstAttribute="top" secondItem="M3w-lv-xxF" secondAttribute="topMargin" id="gAd-9l-oys"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.13849580289999999" green="0.15629374979999999" blue="0.18484163279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="nOcharactersEpisode" destination="TWU-Lp-uLf" id="au3-kK-lPU"/>
+                                    <outlet property="nOcharactersImage" destination="IFr-de-xRI" id="MLc-NA-Emo"/>
+                                    <outlet property="nOcharactersLocation" destination="j2q-Sy-NlH" id="PcJ-2k-6iA"/>
+                                    <outlet property="nOcharactersName" destination="3Gd-AS-uE2" id="wgx-fA-fQO"/>
+                                    <outlet property="nOcharactersStatusImage" destination="fV6-IC-ksZ" id="Z9W-z7-h3B"/>
+                                    <outlet property="nOcharactersStatusText" destination="tJL-Ac-SKF" id="wCn-M9-MJS"/>
+                                    <outlet property="nOcharactersView" destination="67n-zd-KaX" id="c7d-Kj-Pu5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WW2-Gu-LEU" id="L09-du-oV5"/>
+                            <outlet property="delegate" destination="WW2-Gu-LEU" id="9Wb-K0-NQf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Characters" id="1VS-ma-EQX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Vd-aC-GUV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2748" y="409"/>
         </scene>
     </scenes>
     <resources>
