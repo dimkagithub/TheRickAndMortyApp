@@ -10,6 +10,9 @@
 		0A408A8E270A4D72001C7001 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A408A8D270A4D72001C7001 /* FirstViewController.swift */; };
 		0A4A6969270B806B005E6C8B /* EpisodesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A6968270B806B005E6C8B /* EpisodesTVC.swift */; };
 		0A4A6970270B80D7005E6C8B /* EpisodesTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A696F270B80D7005E6C8B /* EpisodesTVCell.swift */; };
+		0A51BCED270C5419006D813A /* ResidentsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51BCEC270C5419006D813A /* ResidentsTVC.swift */; };
+		0A51BCF0270C542F006D813A /* ResidentsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51BCEF270C542F006D813A /* ResidentsTVCell.swift */; };
+		0A51BCF3270C631C006D813A /* Residents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51BCF2270C631C006D813A /* Residents.swift */; };
 		0A667E5C2709C75600E25E78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A667E5B2709C75600E25E78 /* AppDelegate.swift */; };
 		0A667E5E2709C75600E25E78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A667E5D2709C75600E25E78 /* SceneDelegate.swift */; };
 		0A667E632709C75600E25E78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A667E612709C75600E25E78 /* Main.storyboard */; };
@@ -33,6 +36,9 @@
 		0A408A8D270A4D72001C7001 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		0A4A6968270B806B005E6C8B /* EpisodesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTVC.swift; sourceTree = "<group>"; };
 		0A4A696F270B80D7005E6C8B /* EpisodesTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTVCell.swift; sourceTree = "<group>"; };
+		0A51BCEC270C5419006D813A /* ResidentsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentsTVC.swift; sourceTree = "<group>"; };
+		0A51BCEF270C542F006D813A /* ResidentsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentsTVCell.swift; sourceTree = "<group>"; };
+		0A51BCF2270C631C006D813A /* Residents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Residents.swift; sourceTree = "<group>"; };
 		0A667E582709C75600E25E78 /* TheRickAndMortyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheRickAndMortyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A667E5B2709C75600E25E78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A667E5D2709C75600E25E78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 				0A6E0214270A155B002E3FE9 /* Episode.swift */,
 				0A6E020D270A0DB7002E3FE9 /* Locations.swift */,
 				0A6E0211270A1032002E3FE9 /* Episodes.swift */,
+				0A51BCF2270C631C006D813A /* Residents.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,6 +136,8 @@
 				0ACEADAB270B54FD0072C460 /* LocationsTVCell.swift */,
 				0A4A6968270B806B005E6C8B /* EpisodesTVC.swift */,
 				0A4A696F270B80D7005E6C8B /* EpisodesTVCell.swift */,
+				0A51BCEC270C5419006D813A /* ResidentsTVC.swift */,
+				0A51BCEF270C542F006D813A /* ResidentsTVCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,12 +227,15 @@
 				0A408A8E270A4D72001C7001 /* FirstViewController.swift in Sources */,
 				0A6E0215270A155B002E3FE9 /* Episode.swift in Sources */,
 				0A4A6969270B806B005E6C8B /* EpisodesTVC.swift in Sources */,
+				0A51BCED270C5419006D813A /* ResidentsTVC.swift in Sources */,
 				0A6E0212270A1032002E3FE9 /* Episodes.swift in Sources */,
 				0A667E662709C75600E25E78 /* TheRickAndMortyApp.xcdatamodeld in Sources */,
 				0A667E5C2709C75600E25E78 /* AppDelegate.swift in Sources */,
 				0ACEADA5270B54910072C460 /* LocationsTVC.swift in Sources */,
 				0A6E01FF2709D8FC002E3FE9 /* Network.swift in Sources */,
 				0A9FF337270ACDB000266E0B /* FVCViewCell.swift in Sources */,
+				0A51BCF0270C542F006D813A /* ResidentsTVCell.swift in Sources */,
+				0A51BCF3270C631C006D813A /* Residents.swift in Sources */,
 				0A6E020E270A0DB7002E3FE9 /* Locations.swift in Sources */,
 				0A6E0219270A452B002E3FE9 /* Extensions.swift in Sources */,
 				0ACEADAC270B54FD0072C460 /* LocationsTVCell.swift in Sources */,
