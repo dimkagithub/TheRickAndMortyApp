@@ -8,6 +8,7 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    
     @IBOutlet var charachterAllView: UIView!
     @IBOutlet weak var characterImage: UIImageView!
     @IBOutlet weak var ftvcTableView: UITableView!

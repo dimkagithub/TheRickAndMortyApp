@@ -55,6 +55,17 @@ class LocationsTVC: UITableViewController {
         cell.locationNoRinfo.text = locations[indexPath.row].residents.count.description
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showResidents" {
+            let controller = segue.destination as! ResidentsTVC
+            if let index = tableView.indexPathForSelectedRow {
+                let residents: [LocationsResults]
+                residents = allLocations!.locationsResults
+                controller.residentsInfo.append(contentsOf: residents[index.row].residents)
+            }
+        }
+    }
 }
 
 extension LocationsTVC: UISearchResultsUpdating {

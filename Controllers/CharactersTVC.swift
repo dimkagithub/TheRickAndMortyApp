@@ -138,7 +138,7 @@ class CharactersTVC: UITableViewController {
         } else {
             cell.characterStatusImage.backgroundColor = .lightGray
         }
-        cell.characterStatusText.text = ("\(characters[indexPath.row].status.rawValue) - \(characters[indexPath.row].species.rawValue) -  \(characters[indexPath.row].gender.rawValue)")
+        cell.characterStatusText.text = ("\(characters[indexPath.row].status.rawValue) - \(characters[indexPath.row].species.rawValue) - \(characters[indexPath.row].gender.rawValue)")
         cell.characterLocation.text = characters[indexPath.row].location.name
         let urlString = characters[indexPath.row].episode[0]
         let configuration = URLSessionConfiguration.ephemeral
